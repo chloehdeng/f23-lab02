@@ -15,4 +15,4 @@ function newRectangle(width: number, height: number): Rectangle {
     }
 }
 
-export { Rectangle, newRectangle }
+export { newRectangle }
