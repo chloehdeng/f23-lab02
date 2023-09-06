@@ -1,15 +1,14 @@
-interface Circle {
-    radius: number,
-    computeArea: () => number
+class Circle implements Shape {
+    constructor (private readonly radius: number) {}
+    
+    computeArea (): number {
+        return Math.PI * this.radius * this.radius
+    }
+
 }
 
 function newCircle(radius: number): Circle {
-    return {
-        radius,
-        computeArea: function (): number {
-            return Math.PI * radius * radius
-        }
-    }
+    return new Circle(radius)
 }
 
 export { newCircle }

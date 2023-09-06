@@ -1,15 +1,14 @@
-interface Square {
-    sideLen: number,
-    computeArea: () => number
+class Square implements Shape {
+    constructor (private readonly sideLen: number) {}
+    
+    computeArea (): number {
+        return this.sideLen * this.sideLen
+    }
+
 }
 
 function newSquare(sideLen: number): Square {
-    return {
-        sideLen,
-        computeArea: function (): number {
-            return sideLen * sideLen
-        }
-    }
+    return new Square(sideLen)
 }
 
 export { newSquare }
